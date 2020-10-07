@@ -1,15 +1,30 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import Header from "./Header/Header";
+import Header from "./Components/Header/Header";
 import Landing from "./Landing/Landing";
-import TBRGame from "./TBRGame/TBRGame";
-import RevealCards from "./RevealCards/RevealCards";
+import TBRGame from "./Components/TBRGame/TBRGame";
+import RevealCards from "./Components/RevealCards/RevealCards";
 import ErrorBoundary from "./ErrorBoundary";
-import SavedGames from "./SavedGames/SavedGames";
-import Login from "./Login/Login";
-import SignUp from "./SignUp/SignUp";
+import SavedGames from "./Components/SavedGames/SavedGames";
+import Login from "./Components/Login/Login";
+import SignUp from "./Components/SignUp/SignUp";
+import About from "./Components/About/About";
 
 export default class App extends Component {
+  state = {
+
+  }
+
+  componentDidMount = () => {
+    console.log("api called")
+
+  }
+
+
+
+
+
+
   renderMainRoutes() {
     return (
       <>
@@ -19,6 +34,7 @@ export default class App extends Component {
         <Route exact path="/saved-games" component={SavedGames} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/sign-up" component={SignUp} />
+        <Route exact path="/about" component={About} />
       </>
     );
   }

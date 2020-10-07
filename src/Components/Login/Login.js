@@ -1,8 +1,15 @@
 import React from 'react'
 import "./Login.css";
+import config from "../../config";
 
 
-const Login = () => {
+
+export default function Login(props) {
+
+    // fetch(`${config.API_ENDPOINT}/prompts/reveal-cards`)
+    //     .then(res => res.json())
+    //     .then(data => console.log(data))
+
     return (
         <div>
             <form
@@ -24,4 +31,3 @@ const Login = () => {
     )
 }
 
-export default Login

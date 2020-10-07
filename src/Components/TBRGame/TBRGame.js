@@ -3,7 +3,7 @@ import "./TBRGame.css";
 import NavButton from "../NavButton/NavButton";
 import { Link } from "react-router-dom";
 
-import ValidationError from "../ValidationError";
+import ValidationError from "../../ValidationError";
 
 // export default function TBRGame(props) -- maybe switch to this, ask abt the difference?
 const TBRGame = () => {
