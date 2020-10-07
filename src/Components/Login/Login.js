@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Login.css";
-import config from "../../config";
+// import config from "../../config";
 
 
 

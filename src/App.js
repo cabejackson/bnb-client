@@ -1,22 +1,62 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import Header from "./Components/Header/Header";
-import Landing from "./Landing/Landing";
-import TBRGame from "./Components/TBRGame/TBRGame";
-import RevealCards from "./Components/RevealCards/RevealCards";
+import ApiContext from "./ApiContext";
+import config from "./config";
+import Header from "./components/Header/Header";
+import Landing from "./components/Landing/Landing";
+import TBRGame from "./components/TBRGame/TBRGame";
+import RevealCards from "./components/RevealCards/RevealCards";
 import ErrorBoundary from "./ErrorBoundary";
-import SavedGames from "./Components/SavedGames/SavedGames";
-import Login from "./Components/Login/Login";
-import SignUp from "./Components/SignUp/SignUp";
-import About from "./Components/About/About";
+import SavedGames from "./components/SavedGames/SavedGames";
+import Login from "./components/Login/Login";
+import SignUp from "./components/SignUp/SignUp";
+import About from "./components/About/About";
 
 export default class App extends Component {
   state = {
+    prompts: [],
+    noteNameValue: "",
 
   }
 
+  //Here's a DRY method of doing things,
+  // Use this for the sign-up, login, and TBR game forms
+  handleInputChange = (e) => {
+    console.log("test");
+    // Here, e is the event.
+    // e.target is our element.
+    // All we need to do is to update the current state with the values here.
+    this.setState({
+      [e.target.name]: e.target.value
+      //what is name? A: name is the attr inside the
+      //what is value? A: whatever the user types inside the input
+    });
+  };
+
+  handleNoteNameChange = (noteNameValue) => {
+    console.log("handleNoteNameChange is working");
+    this.setState({ noteNameValue });
+  };
+
   componentDidMount = () => {
     console.log("api called")
+
+    Promise.all([
+      fetch(`${config.API_ENDPOINT}/prompts/reveal-cards`),
+
+    ])
+      .then(([promptsRes]) => {
+        if (!promptsRes.ok) return promptsRes.json().then((e) => Promise.reject(e));
+
+        return Promise.all([promptsRes.json()]);
+      })
+      .then(([prompts]) => {
+        console.log('this is prompts in the .then', prompts);
+        this.setState({ prompts });
+      })
+      .catch((error) => {
+        console.error({ error });
+      });
 
   }
 
@@ -40,15 +80,23 @@ export default class App extends Component {
   }
 
   render() {
+    const value = {
+      prompts: this.state.prompts,
+      noteNameValue: this.state.noteNameValue,
+
+    }
+    console.log('test', this.state.prompts);
     return (
       <ErrorBoundary>
-        <div className="App">
-          {/* <nav className="App__nav"> {this.renderNavRoutes()} </nav> */}
-          <header className="App__header">
-            <Header />
-          </header>
-          <main className="App__main"> {this.renderMainRoutes()} </main>
-        </div>
+        <ApiContext.Provider value={value}>
+          <div className="App">
+            {/* <nav className="App__nav"> {this.renderNavRoutes()} </nav> */}
+            <header className="App__header">
+              <Header />
+            </header>
+            <main className="App__main"> {this.renderMainRoutes()} </main>
+          </div>
+        </ApiContext.Provider>
       </ErrorBoundary>
     );
   }

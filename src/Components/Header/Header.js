@@ -21,10 +21,10 @@ const Header = () => {
             <li>
               <Link to="/sign-up" > SIGN-UP </Link>
             </li>
-            {/* This could be an "about the dev page"
+            {/* This could be an "about the dev page" */}
             <li>
-              <Link to="/reveal-cards" > ABOUT </Link>
-            </li> */}
+              <Link to="/about" > ABOUT </Link>
+            </li>
           </ul>
         </nav>
       </header>
