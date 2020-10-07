@@ -15,14 +15,18 @@ import About from "./components/About/About";
 export default class App extends Component {
   state = {
     prompts: [],
-    noteNameValue: "",
-
+    // value: "",
+    first_name: "",
+    last_name: "",
+    user_name: "",
+    email: "",
+    password: ""
   }
 
   //Here's a DRY method of doing things,
   // Use this for the sign-up, login, and TBR game forms
   handleInputChange = (e) => {
-    console.log("test");
+    console.log("handle input change is running");
     // Here, e is the event.
     // e.target is our element.
     // All we need to do is to update the current state with the values here.
@@ -82,7 +86,13 @@ export default class App extends Component {
   render() {
     const value = {
       prompts: this.state.prompts,
-      noteNameValue: this.state.noteNameValue,
+      // value: this.state.value,
+      handleInputChange: this.handleInputChange,
+      first_name: this.state.first_name,
+      last_name: this.state.last_name,
+      user_name: this.state.user_name,
+      email: this.state.email,
+      password: this.state.password
 
     }
     console.log('test', this.state.prompts);

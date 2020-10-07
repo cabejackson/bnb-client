@@ -8,6 +8,29 @@ import ValidationError from "../../ValidationError";
 
 // export default function TBRGame(props) -- maybe switch to this, ask abt the difference?
 const TBRGame = () => {
+
+
+  // handles the form submission
+  // adds a new user to the sever (or to the db?)
+  // should a message appeare on the page? - perhaps
+  // const handleGameSubmission = (tbrNumber, cardsChosen) => {
+  //   const userGameInput = { tbrNumber, cardsChosen };
+
+  //   fetch(`${config.API_ENDPOINT}/users/`,
+  //     {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(userGameInput)
+  //     })
+  //     .then((res) => res.json())
+  //     .then((data) => console.log("this is data:", data))
+
+  //     .catch((error) => {
+  //       console.log(error.message)
+  //     })
+  // }
+
+
   const validateTbrNumber = (tbrNumber) => {
     console.log("this is the tbr number user inputted:", tbrNumber);
     if (tbrNumber.length < 1)
@@ -57,7 +80,7 @@ const TBRGame = () => {
                     id="tbrNumber"
                     name="tbrNumber"
                     placeholder="e.g. 5"
-                    // onChange={(e) => context.handleTbrNumberChange(e.target.value)}
+                    // onChange={(e) => context.handleInputChange(e.target.value)}
                     required
                   />
                 </label>
@@ -65,11 +88,21 @@ const TBRGame = () => {
         </h3>
               {/* <ValidationError message={validateTbrNumber(context.noteNameValue)} /> */}
 
+              {/* These should be an option */}
               <h3>Choose "X" cards!</h3>
               {/* {context.prompts.map(p => (<ul><li key={p.id}>{p.prompt_descr}</li><li><p>[this is placeholder for some cool card image 1]</p></li></ul>))} */}
-              <p>[this is placeholder for some cool card image 1]</p>
-              <p>[this is placeholder for some cool card image 2]</p>
-              <p>[this is placeholder for some cool card image 3]</p>
+              <label htmlFor="chosenCard">
+                <span>[this is placeholder for some cool card image 1]</span>
+                <input type="checkbox" name="chosenCard" id="" />
+              </label><br />
+              <label htmlFor="chosenCard">
+                <span>[this is placeholder for some cool card image 2]</span>
+                <input type="checkbox" name="chosenCard" id="" />
+              </label><br />
+              <label htmlFor="chosenCard">
+                <span>[this is placeholder for some cool card image 3]</span>
+                <input type="checkbox" name="chosenCard" id="" />
+              </label><br />
               {/* <ValidationError message={validateTbrNumber(context.noteNameValue)} /> */}
 
               <button type="submit" id="button-reveal-cards">
