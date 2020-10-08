@@ -20,7 +20,9 @@ export default class App extends Component {
     last_name: "",
     user_name: "",
     email: "",
-    password: ""
+    password: "",
+    tbrNumber: null,
+    isSelected: false,
   }
 
   //Here's a DRY method of doing things,
@@ -35,6 +37,15 @@ export default class App extends Component {
       //what is name? A: name is the attr inside the
       //what is value? A: whatever the user types inside the input
     });
+
+
+
+    // handleOptionChange = (e) => {
+    //   console.log("handle option change is running");
+    //   this.setState ({
+    //     selectedOption: changeEvent.target.value
+    //   })
+    // }
   };
 
   handleNoteNameChange = (noteNameValue) => {
@@ -92,7 +103,9 @@ export default class App extends Component {
       last_name: this.state.last_name,
       user_name: this.state.user_name,
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
+      tbrNumber: this.state.tbrNumber,
+
 
     }
     console.log('test', this.state.prompts);

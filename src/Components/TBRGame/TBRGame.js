@@ -79,8 +79,9 @@ const TBRGame = () => {
                     type="text"
                     id="tbrNumber"
                     name="tbrNumber"
+                    value={context.tbrNumber || ""}
                     placeholder="e.g. 5"
-                    // onChange={(e) => context.handleInputChange(e.target.value)}
+                    onChange={(e) => context.handleInputChange(e)}
                     required
                   />
                 </label>
@@ -89,7 +90,7 @@ const TBRGame = () => {
               {/* <ValidationError message={validateTbrNumber(context.noteNameValue)} /> */}
 
               {/* These should be an option */}
-              <h3>Choose "X" cards!</h3>
+              <h3>Choose <code>{context.tbrNumber}</code> cards!</h3>
               {/* {context.prompts.map(p => (<ul><li key={p.id}>{p.prompt_descr}</li><li><p>[this is placeholder for some cool card image 1]</p></li></ul>))} */}
               <label htmlFor="chosenCard">
                 <span>[this is placeholder for some cool card image 1]</span>
@@ -101,6 +102,14 @@ const TBRGame = () => {
               </label><br />
               <label htmlFor="chosenCard">
                 <span>[this is placeholder for some cool card image 3]</span>
+                <input type="checkbox" name="chosenCard" id="" />
+              </label><br />
+              <label htmlFor="chosenCard">
+                <span>[this is placeholder for some cool card image 4]</span>
+                <input type="checkbox" name="chosenCard" id="" />
+              </label><br />
+              <label htmlFor="chosenCard">
+                <span>[this is placeholder for some cool card image 5]</span>
                 <input type="checkbox" name="chosenCard" id="" />
               </label><br />
               {/* <ValidationError message={validateTbrNumber(context.noteNameValue)} /> */}
