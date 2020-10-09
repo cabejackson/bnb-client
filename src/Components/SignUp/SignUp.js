@@ -14,8 +14,8 @@ export default function SignUp(props) {
     //     .then(res => res.json())
     //         .then(data => console.log(data))
 
-    // handles the form submission
-    // adds a new user to the sever (or to the db?)
+    // handles the sign-up form submission
+    // adds a new user to the sever (which adds it to the db?)
     // should a message appeare on the page? - perhaps
     const handleSignUpSubmission = (first_name, last_name, user_name, email, password) => {
         const userSignUpInput = { first_name, last_name, user_name, email, password };

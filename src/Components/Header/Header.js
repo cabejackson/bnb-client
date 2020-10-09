@@ -4,6 +4,15 @@ import { Link } from "react-router-dom";
 
 
 const Header = () => {
+
+  // render logout link:
+  // {
+  //   TokenService.hasAuthToken()
+  //   ? this.renderLogoutLink()
+  //   : this.renderLoginLink()
+  // }
+
+
   return (
     <>
       <header>
