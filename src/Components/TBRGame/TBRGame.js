@@ -33,9 +33,9 @@ const TBRGame = () => {
 
   const validateTbrNumber = (tbrNumber) => {
     console.log("this is the tbr number user inputted:", tbrNumber);
-    if (tbrNumber.length < 1)
+    if (tbrNumber < 1)
       return "You need to read more than 0 books to play this game LOL!";
-    if (tbrNumber.length > 5)
+    if (tbrNumber > 5)
       return "We only have 5 prompts so far, lol so read less books!";
   };
   // Shows an error if user has chosen the correct number of cards
@@ -87,30 +87,63 @@ const TBRGame = () => {
                 </label>
           books this month!
         </h3>
-              {/* <ValidationError message={validateTbrNumber(context.noteNameValue)} /> */}
+              <ValidationError message={validateTbrNumber(context.tbrNumber)} />
 
               {/* These should be an option */}
               <h3>Choose <code>{context.tbrNumber}</code> cards!</h3>
               {/* {context.prompts.map(p => (<ul><li key={p.id}>{p.prompt_descr}</li><li><p>[this is placeholder for some cool card image 1]</p></li></ul>))} */}
-              <label htmlFor="chosenCard">
+              <label htmlFor="prompt-1">
                 <span>[this is placeholder for some cool card image 1]</span>
-                <input type="checkbox" name="chosenCard" id="" />
+                <input
+                  name="prompt-1"
+                  id="prompt-1"
+                  value={context.isSelected}
+                  // onChange={(e) => context.handleInputChange(e)}
+                  type="checkbox" />
               </label><br />
-              <label htmlFor="chosenCard">
+
+              <label htmlFor="prompt-2">
                 <span>[this is placeholder for some cool card image 2]</span>
-                <input type="checkbox" name="chosenCard" id="" />
+                <input
+                  name="prompt-2"
+                  id="prompt-2"
+                  value={context.isSelected}
+                  // onCheckBoxChange={}
+                  // onChange={(e) => context.handleInputChange(e)}
+                  type="checkbox" />
               </label><br />
-              <label htmlFor="chosenCard">
+
+              <label htmlFor="prompt-3">
                 <span>[this is placeholder for some cool card image 3]</span>
-                <input type="checkbox" name="chosenCard" id="" />
+                <input
+                  name="prompt-3"
+                  id="prompt-3"
+                  value={context.isSelected}
+                  // onCheckBoxChange={}
+                  // onChange={(e) => context.handleInputChange(e)}
+                  type="checkbox" />
               </label><br />
-              <label htmlFor="chosenCard">
+
+              <label htmlFor="prompt-4">
                 <span>[this is placeholder for some cool card image 4]</span>
-                <input type="checkbox" name="chosenCard" id="" />
+                <input
+                  name="prompt-4"
+                  id="prompt-4"
+                  value={context.isSelected}
+                  // onCheckBoxChange={}
+                  // onChange={(e) => context.handleInputChange(e)}
+                  type="checkbox" />
               </label><br />
-              <label htmlFor="chosenCard">
+
+              <label htmlFor="prompt-5">
                 <span>[this is placeholder for some cool card image 5]</span>
-                <input type="checkbox" name="chosenCard" id="" />
+                <input
+                  name="prompt-5"
+                  id="prompt-5"
+                  value={context.isSelected}
+                  // onCheckBoxChange={}
+                  // onChange={(e) => context.handleInputChange(e)}
+                  type="checkbox" />
               </label><br />
               {/* <ValidationError message={validateTbrNumber(context.noteNameValue)} /> */}
 

@@ -38,6 +38,17 @@ export default class App extends Component {
       //what is value? A: whatever the user types inside the input
     });
 
+    // handleCheckboxChange = changeEvent => {
+    //   const { name } = changeEvent.target;
+
+    //   this.setState(prevState => ({
+    //     checkboxes: {
+    //       ...prevState.checkboxes,
+    //       [name]: !prevState.checkboxes[name]
+    //     }
+    //   }));
+    // };
+
 
 
     // handleOptionChange = (e) => {
@@ -105,6 +116,7 @@ export default class App extends Component {
       email: this.state.email,
       password: this.state.password,
       tbrNumber: this.state.tbrNumber,
+      isSelected: this.state.isSelected
 
 
     }
