@@ -28,7 +28,7 @@ export default class App extends Component {
   //Here's a DRY method of doing things,
   // Use this for the sign-up, login, and TBR game forms
   handleInputChange = (e) => {
-    // console.log("handle input change is running");
+    console.log("handle input change is running");
     // Here, e is the event.
     // e.target is our element.
     // All we need to do is to update the current state with the values here.
@@ -77,7 +77,7 @@ export default class App extends Component {
         return Promise.all([promptsRes.json()]);
       })
       .then(([prompts]) => {
-        // console.log('this is prompts in the .then', prompts);
+        console.log('this is prompts in the .then', prompts);
         this.setState({ prompts });
       })
       .catch((error) => {
