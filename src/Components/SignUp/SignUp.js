@@ -44,7 +44,7 @@ export default function SignUp(props) {
                         className="signup-form-submission"
                         onSubmit={(e) => {
                             e.preventDefault();
-                            console.log("the SIGN-UP form has been submitted", context);
+                            // console.log("the SIGN-UP form has been submitted", context);
                             handleSignUpSubmission(
                                 // context.value,
                                 context.first_name,

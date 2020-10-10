@@ -32,7 +32,7 @@ const TBRGame = () => {
 
 
   const validateTbrNumber = (tbrNumber) => {
-    console.log("this is the tbr number user inputted:", tbrNumber);
+    // console.log("this is the tbr number user inputted:", tbrNumber);
     if (tbrNumber < 1)
       return "You need to read more than 0 books to play this game LOL!";
     if (tbrNumber > 5)
