@@ -45,7 +45,7 @@ export default function Login(props) {
                         className="login-form-submission"
                         onSubmit={(e) => {
                             e.preventDefault();
-                            console.log("the LOGIN form has been submitted");
+                            // console.log("the LOGIN form has been submitted");
                             handleLoginSubmission(
                                 // context.value
                                 context.user_name,

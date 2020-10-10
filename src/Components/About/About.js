@@ -50,7 +50,7 @@ export default function About(props) {
     return (
         <ApiContext.Consumer>
             {context => {
-                console.log('this is context', context);
+                // console.log('this is context', context);
                 return (
                     <>
                         <h1>More About the Developer<br />
